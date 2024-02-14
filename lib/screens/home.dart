@@ -1,8 +1,8 @@
+import 'package:bad_zanko_pp/Components/custom_appbar.dart';
+import 'package:bad_zanko_pp/Components/custom_field.dart';
+import 'package:bad_zanko_pp/Components/simple_button.dart';
+import 'package:bad_zanko_pp/screens/gender_select.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterapp/Components/custom_appbar.dart';
-import 'package:flutterapp/Components/custom_field.dart';
-import 'package:flutterapp/Components/simple_button.dart';
-import 'package:flutterapp/screens/gender_select.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -31,8 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 100,
             ),
             const Image(
-              image: NetworkImage(
-                  "https://cdn-icons-png.flaticon.com/512/4349/4349072.png"),
+              image: NetworkImage("https://cdn-icons-png.flaticon.com/512/4349/4349072.png"),
               width: 100,
             ),
             const SizedBox(
@@ -63,9 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   onPressed: () {
                     String userName = usernameController.text;
                     String password = passwordController.text;
-                    print(userName + password);
                     if (userName == "diary" && password == "1234") {
-                      print('Successfully log in ');
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -80,8 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             title: Text(
                               'Authintication Faild',
                             ),
-                            content: Text(
-                                'Sorry, Your Email or Password Are Inccorect.'),
+                            content: Text('Sorry, Your Email or Password Are Inccorect.'),
                           );
                         },
                       );

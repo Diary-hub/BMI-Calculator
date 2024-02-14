@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/Components/custom_appbar.dart';
+import 'package:bad_zanko_pp/Components/custom_appbar.dart';
 
 class WeightSelector extends StatefulWidget {
   const WeightSelector({super.key, this.isFemale = true});

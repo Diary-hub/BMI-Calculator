@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/Components/custom_appbar.dart';
+import 'package:bad_zanko_pp/Components/custom_appbar.dart';
 
 class GenderSelector extends StatefulWidget {
   const GenderSelector({super.key});

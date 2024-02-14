@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/splash.dart';
+import 'package:bad_zanko_pp/splash.dart';
 
 void main() {
   runApp(const MyApp());
