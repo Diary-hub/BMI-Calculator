@@ -8,6 +8,7 @@ class SimpleButton extends StatelessWidget {
     required this.onPressed,
     required this.text,
     this.style,
+    this.styleText = const TextStyle(),
   });
 
   final double width;
@@ -15,6 +16,7 @@ class SimpleButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String text;
   final ButtonStyle? style;
+  final TextStyle styleText;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,10 @@ class SimpleButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: style,
-        child: Text(text),
+        child: Text(
+          text,
+          style: styleText,
+        ),
       ),
     );
   }

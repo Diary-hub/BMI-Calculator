@@ -1,3 +1,5 @@
+import 'package:bad_zanko_pp/helper/helper.dart';
+import 'package:bad_zanko_pp/screens/size_selector.dart';
 import 'package:flutter/material.dart';
 import 'package:bad_zanko_pp/Components/custom_appbar.dart';
 
@@ -20,10 +22,17 @@ class _GenderSelectorState extends State<GenderSelector> {
       floatingActionButton: FloatingActionButton.large(
         backgroundColor: isFemale ? (Colors.pink) : (Colors.cyan),
         child: const Icon(Icons.arrow_forward_ios),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => SizeSelector(
+                        isFemale: isFemale,
+                      )));
+        },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      appBar: CustomAppBar('Select Your Gender'),
+      appBar: CustomAppBar('Select Your Gender', HelperClass.getColor(isFemale)),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -34,6 +43,7 @@ class _GenderSelectorState extends State<GenderSelector> {
               Opacity(
                 opacity: !isFemale ? 1.0 : 0.4,
                 child: InkWell(
+                  borderRadius: BorderRadius.circular(10),
                   onTap: () => setState(() {
                     isFemale = false;
                   }),
@@ -57,6 +67,7 @@ class _GenderSelectorState extends State<GenderSelector> {
               Opacity(
                 opacity: isFemale ? 1.0 : 0.4,
                 child: InkWell(
+                  borderRadius: BorderRadius.circular(10),
                   onTap: () => setState(() {
                     isFemale = true;
                   }),

@@ -17,8 +17,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double sH = MediaQuery.sizeOf(context).width;
+    double sW = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: CustomAppBar('Login Form'),
+      appBar: CustomAppBar('Login Form', Colors.black, style: const TextStyle(color: Colors.white)),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -27,12 +29,12 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               width: double.infinity,
             ),
-            const SizedBox(
-              height: 100,
+            SizedBox(
+              height: sH * 0.1,
             ),
-            const Image(
-              image: NetworkImage("https://cdn-icons-png.flaticon.com/512/4349/4349072.png"),
-              width: 100,
+            Image(
+              image: const NetworkImage("https://cdn-icons-png.flaticon.com/512/4349/4349072.png"),
+              width: sW * 0.3,
             ),
             const SizedBox(
               height: 10,
@@ -41,6 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
               children: [
                 CustomField(
+                  sW: sW * 0.4,
                   obscureText: false,
                   controller: usernameController,
                   icon: const Icon(Icons.person),
@@ -50,15 +53,19 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 10,
                 ),
                 CustomField(
+                  sW: sW * 0.4,
                   obscureText: true,
                   controller: passwordController,
                   icon: const Icon(Icons.lock),
                   label: "Password",
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 40,
                 ),
                 SimpleButton(
+                  height: sH * 0.14,
+                  width: sW * 0.4,
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.black87),
                   onPressed: () {
                     String userName = usernameController.text;
                     String password = passwordController.text;
@@ -86,6 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     }
                   },
                   text: 'Login',
+                  styleText: const TextStyle(color: Colors.white, fontSize: 30),
                 )
               ],
             ))

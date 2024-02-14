@@ -1,9 +1,13 @@
 // ignore_for_file: non_constant_identifier_names
 import 'package:flutter/material.dart';
 
-AppBar CustomAppBar(String title) {
+AppBar CustomAppBar(String title, Color color, {TextStyle style = const TextStyle()}) {
   return AppBar(
     centerTitle: true,
-    title: Text(title),
+    backgroundColor: color,
+    title: Text(
+      title,
+      style: style,
+    ),
   );
 }

@@ -7,18 +7,19 @@ class CustomField extends StatelessWidget {
       required this.label,
       required this.controller,
       required this.icon,
-      this.width = 200});
+      this.width = 200,
+      required this.sW});
 
   final bool obscureText;
   final String label;
   final TextEditingController controller;
   final Icon icon;
   final double width;
-
+  final double sW;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 200,
+      width: sW,
       child: TextFormField(
         controller: controller,
         obscureText: obscureText,
